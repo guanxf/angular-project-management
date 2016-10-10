@@ -1,0 +1,27 @@
+<div class="app-news-list">
+	<div class="app-inner clearfix">
+		<h1>消息列表</h1>
+		<div class="container">
+			<div class="row title">
+				<div class="col-lg-1">消息ID</div>
+				<div class="col-lg-2">消息标题</div>
+				<div class="col-lg-4">消息内容</div>
+				<div class="col-lg-2">消息作者</div>
+				<div class="col-lg-2">消息时间</div>
+			</div>
+			<div class="row" ng-repeat="item in list">
+				<div class="col-lg-1">{{item.id}}</div>
+				<div class="col-lg-2"><a href="#/newsinfo/{{item.id}}">{{item.title}}</a></div>
+				<div class="col-lg-4">{{item.content}}</div>
+				<div class="col-lg-2">{{item.writer}}</div>
+				<div class="col-lg-2">{{item.date | date : 'yyyy-MM-dd HH:mm:ss'}}</div>
+			</div>
+		</div>
+		<div class="pull-right">
+			<ul class="pagination">
+				<li><a href="#/newslist/{{num <= 1 ? 1 : num-1}}">上一页</a></li>
+				<li><a href="#/newslist/{{+num + 1}}">下一页</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
